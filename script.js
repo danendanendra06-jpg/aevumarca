@@ -1,5 +1,5 @@
 /**
- * ChainCapsule - UI Interactivity & Web3 Placeholder Script (Tahap 2)
+ * ChainCapsule - UI Interactivity & Web3 Script Placeholder
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,15 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const messageInput = document.getElementById('messageInput');
     const charCounter = document.getElementById('charCounter');
-    const submitBtn = document.getElementById('submitCapsuleBtn');
 
-    // Listener karakter counter untuk textarea
+    // Real-time character counter listener
     if (messageInput && charCounter) {
         messageInput.addEventListener('input', (e) => {
             const length = e.target.value.length;
             charCounter.textContent = length;
 
-            // Efek visual jika mendekati batas 500 karakter
+            // Visual feedback as user approaches 500 characters limit
             if (length >= 480) {
                 charCounter.style.color = 'var(--rose-accent)';
             } else if (length >= 400) {
