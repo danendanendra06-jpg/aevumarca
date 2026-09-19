@@ -185,6 +185,12 @@ body {
     color: var(--emerald-accent);
 }
 
+.network-badge.wrong-network {
+    background: rgba(244, 63, 94, 0.12);
+    border-color: rgba(244, 63, 94, 0.35);
+    color: var(--rose-accent);
+}
+
 .network-badge.disconnected {
     color: var(--text-muted);
 }
@@ -200,6 +206,11 @@ body {
     background-color: var(--emerald-accent);
     box-shadow: 0 0 10px var(--emerald-accent);
     animation: pulse 2s infinite;
+}
+
+.network-badge.wrong-network .pulse-dot {
+    background-color: var(--rose-accent);
+    box-shadow: 0 0 8px var(--rose-accent);
 }
 
 @keyframes pulse {
