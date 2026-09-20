@@ -11,8 +11,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Ethers.js v5.7.2 CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" integrity="sha512-FDcvy+g7vc5CXANbrWnjFUucpYLyCwy2ndcL81q7e8a9775a2f5f4D37A3C5R22f1lC5pC1Wc3fA8D23b5sD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Ethers.js Library (Local Bundle with CDN Fallback) -->
+    <script src="assets/ethers.umd.min.js"></script>
+    <script>
+        if (typeof ethers === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"><\/script>');
+        }
+    </script>
     
     <!-- Main Style -->
     <link rel="stylesheet" href="style.css">
