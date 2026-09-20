@@ -1,5 +1,5 @@
 /**
- * ChainCapsule - Web3 & MetaMask Frontend Script
+ * AevumArca - Web3 & MetaMask Frontend Script
  * Target Network: BOT Chain Testnet (Chain ID: 968 / 0x3c8)
  * Contract Address: 0x2B35116C58093935f35BE1f7c487C5a02cd835D8
  */
@@ -181,7 +181,7 @@ async function initWeb3() {
  */
 async function connectWallet() {
     if (!isMetaMaskInstalled()) {
-        alert("MetaMask extension not detected. Please install MetaMask to interact with ChainCapsule.");
+        alert("MetaMask extension not detected. Please install MetaMask to interact with AevumArca.");
         return;
     }
 
@@ -465,7 +465,7 @@ function updateUI() {
 // 7. Initialization
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Initializing ChainCapsule dApp...");
+    console.log("Initializing AevumArca dApp...");
 
     const connectWalletBtn = document.getElementById('connectWalletBtn');
     const switchNetworkBtn = document.getElementById('switchNetworkBtn');
