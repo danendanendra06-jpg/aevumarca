@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ChainCapsule - Store immutable messages & personal goals on BOT Chain Testnet">
-    <title>ChainCapsule | Blockchain Time Capsule</title>
+    <meta name="description" content="AevumArca - Store immutable messages & personal goals on BOT Chain Testnet">
+    <title>AevumArca | Blockchain Time Capsule</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Ethers.js v5.7.2 CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js" integrity="sha512-FDcvy+g7vc5CXANbrWnjFUucpYLyCwy2ndcL81q7e8a9775a2f5f4D37A3C5R22f1lC5pC1Wc3fA8D23b5sD/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Ethers.js Library (Local Bundle with CDN Fallback) -->
+    <script src="assets/ethers.umd.min.js"></script>
+    <script>
+        if (typeof ethers === 'undefined') {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"><\/script>');
+        }
+    </script>
     
     <!-- Main Style -->
     <link rel="stylesheet" href="style.css">
@@ -32,7 +37,7 @@
                     </svg>
                 </div>
                 <div class="brand-text">
-                    <h1>ChainCapsule</h1>
+                    <h1>AevumArca</h1>
                     <span class="badge-testnet">BOT Testnet</span>
                 </div>
             </div>
@@ -152,7 +157,27 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p>ChainCapsule &copy; 2026 - Hackathon MVP dApp on BOT Chain Testnet</p>
+            <p>AevumArca &copy; 2026 - Hackathon MVP dApp on BOT Chain Testnet</p>
+            <div class="footer-links">
+                <span class="footer-brand-label">Powered by BOT Chain:</span>
+                <a href="https://botchain.ai/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    BOT Chain
+                </a>
+                <span class="footer-separator">•</span>
+                <a href="https://scan.botchain.ai/" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    BOT Chain Explorer
+                </a>
+            </div>
         </footer>
     </div>
 

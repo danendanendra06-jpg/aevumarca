@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ChainCapsule - Modern Web3 Glassmorphism Stylesheet
+   AevumArca - Modern Web3 Glassmorphism Stylesheet
    ========================================================================== */
 
 :root {
@@ -185,6 +185,12 @@ body {
     color: var(--emerald-accent);
 }
 
+.network-badge.wrong-network {
+    background: rgba(244, 63, 94, 0.12);
+    border-color: rgba(244, 63, 94, 0.35);
+    color: var(--rose-accent);
+}
+
 .network-badge.disconnected {
     color: var(--text-muted);
 }
@@ -200,6 +206,11 @@ body {
     background-color: var(--emerald-accent);
     box-shadow: 0 0 10px var(--emerald-accent);
     animation: pulse 2s infinite;
+}
+
+.network-badge.wrong-network .pulse-dot {
+    background-color: var(--rose-accent);
+    box-shadow: 0 0 8px var(--rose-accent);
 }
 
 @keyframes pulse {
@@ -550,6 +561,54 @@ body {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 32px 20px 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+}
+
+.footer-brand-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.footer-link {
+    color: var(--cyan-glow);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.footer-separator {
+    color: var(--text-muted);
+    opacity: 0.5;
 }
 
 /* Responsive Layout */
