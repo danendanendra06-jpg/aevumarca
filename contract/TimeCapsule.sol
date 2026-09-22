@@ -1,10 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-/**
- * @title TimeCapsule
- * @dev Simple smart contract to store personal messages/goals on BOT Chain Testnet.
- */
+// Smart contract to permanently store personal messages and future targets on the BOT Chain.
 contract TimeCapsule {
     
     // Data structure for each capsule
@@ -14,7 +11,7 @@ contract TimeCapsule {
         uint256 timestamp;
     }
 
-    // Stores all created capsules
+    // Array to store all created capsules
     Capsule[] private capsules;
 
     // Event emitted when a new capsule is created
@@ -25,10 +22,7 @@ contract TimeCapsule {
         uint256 timestamp
     );
 
-    /**
-     * @dev Adds a new message capsule to the blockchain.
-     * @param _message The personal message or goal to be stored.
-     */
+    // Adds a new message capsule to the blockchain
     function createCapsule(string calldata _message) external {
         require(bytes(_message).length > 0, "Message cannot be empty");
         require(bytes(_message).length <= 500, "Message too long (max 500 chars)");
@@ -45,27 +39,17 @@ contract TimeCapsule {
         emit CapsuleCreated(newId, msg.sender, _message, block.timestamp);
     }
 
-    /**
-     * @dev Returns all stored capsules.
-     * @return Array of Capsule structs.
-     */
+    // Returns all stored capsules
     function getAllCapsules() external view returns (Capsule[] memory) {
         return capsules;
     }
 
-    /**
-     * @dev Returns the total number of stored capsules.
-     * @return Total capsule count.
-     */
+    // Returns the total number of stored capsules
     function getCapsulesCount() external view returns (uint256) {
         return capsules.length;
     }
 
-    /**
-     * @dev Returns capsules created by a specific wallet address.
-     * @param _creator Wallet address of the creator.
-     * @return Array of Capsule structs created by _creator.
-     */
+    // Returns capsules created by a specific wallet address
     function getCapsulesByCreator(address _creator) external view returns (Capsule[] memory) {
         uint256 count = 0;
         for (uint256 i = 0; i < capsules.length; i++) {
