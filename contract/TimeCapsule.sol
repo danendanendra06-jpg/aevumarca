@@ -3,21 +3,21 @@ pragma solidity ^0.8.20;
 
 /**
  * @title TimeCapsule
- * @dev Smart contract sederhana untuk menyimpan pesan / target pribadi ke BOT Chain Testnet.
+ * @dev Simple smart contract to store personal messages/goals on BOT Chain Testnet.
  */
 contract TimeCapsule {
     
-    // Struktur data untuk setiap capsule
+    // Data structure for each capsule
     struct Capsule {
         string message;
         address creator;
         uint256 timestamp;
     }
 
-    // Array penyimpan seluruh capsule yang telah dibuat
+    // Stores all created capsules
     Capsule[] private capsules;
 
-    // Event yang dipancarkan saat capsule baru dibuat
+    // Event emitted when a new capsule is created
     event CapsuleCreated(
         uint256 indexed id,
         address indexed creator,
@@ -26,8 +26,8 @@ contract TimeCapsule {
     );
 
     /**
-     * @dev Menambahkan capsule pesan baru ke dalam blockchain.
-     * @param _message Isi pesan atau target pribadi yang ingin disimpan.
+     * @dev Adds a new message capsule to the blockchain.
+     * @param _message The personal message or goal to be stored.
      */
     function createCapsule(string calldata _message) external {
         require(bytes(_message).length > 0, "Message cannot be empty");
@@ -46,25 +46,25 @@ contract TimeCapsule {
     }
 
     /**
-     * @dev Mengembalikan seluruh daftar capsule yang tersimpan.
-     * @return Array dari struktur Capsule.
+     * @dev Returns all stored capsules.
+     * @return Array of Capsule structs.
      */
     function getAllCapsules() external view returns (Capsule[] memory) {
         return capsules;
     }
 
     /**
-     * @dev Mengembalikan total jumlah capsule yang tersimpan.
-     * @return Jumlah total capsule.
+     * @dev Returns the total number of stored capsules.
+     * @return Total capsule count.
      */
     function getCapsulesCount() external view returns (uint256) {
         return capsules.length;
     }
 
     /**
-     * @dev Mengembalikan capsule yang dibuat oleh alamat dompet tertentu.
-     * @param _creator Alamat dompet pembuat.
-     * @return Array dari struktur Capsule buatan `_creator`.
+     * @dev Returns capsules created by a specific wallet address.
+     * @param _creator Wallet address of the creator.
+     * @return Array of Capsule structs created by _creator.
      */
     function getCapsulesByCreator(address _creator) external view returns (Capsule[] memory) {
         uint256 count = 0;

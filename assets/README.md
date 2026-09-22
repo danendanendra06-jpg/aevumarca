@@ -1,2 +1,2 @@
 # AevumArca Assets Directory
-Folder ini digunakan untuk menyimpan gambar, logo, atau ikon proyek jika dibutuhkan.
+This directory is used to store project images, logos, or icons as needed.
