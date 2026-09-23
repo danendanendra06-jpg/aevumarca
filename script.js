@@ -7,10 +7,10 @@
 // ==========================================
 // 1. Network & Contract Configurations
 // ==========================================
-const CONTRACT_ADDRESS = "0x2B35116C58093935f35BE1f7c487C5a02cd835D8";
-const TARGET_CHAIN_ID_DECIMAL = 968;
-const TARGET_CHAIN_ID_HEX = "0x3c8";
-const BOT_RPC_URL = "https://rpc.bohr.life";
+const CONTRACT_ADDRESS = "0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2"; 
+const TARGET_CHAIN_ID_DECIMAL = 677;
+const TARGET_CHAIN_ID_HEX = "0x2a5";
+const BOT_RPC_URL = "https://rpc.botchain.ai";
 
 const BOT_CHAIN_CONFIG = {
     chainId: TARGET_CHAIN_ID_HEX,
