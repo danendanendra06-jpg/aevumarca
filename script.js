@@ -1,20 +1,20 @@
 /**
  * AevumArca - Web3 & MetaMask Frontend Script
- * Target Network: BOT Chain Testnet (Chain ID: 968 / 0x3c8)
+ * Target Network: BOT Chain  (Chain ID: 968 / 0x3c8)
  * Contract Address: 0x2B35116C58093935f35BE1f7c487C5a02cd835D8
  */
 
 // ==========================================
 // 1. Network & Contract Configurations
 // ==========================================
-const CONTRACT_ADDRESS = "0x2B35116C58093935f35BE1f7c487C5a02cd835D8";
-const TARGET_CHAIN_ID_DECIMAL = 968;
-const TARGET_CHAIN_ID_HEX = "0x3c8";
-const BOT_RPC_URL = "https://rpc.bohr.life";
+const CONTRACT_ADDRESS = "0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2"; 
+const TARGET_CHAIN_ID_DECIMAL = 677;
+const TARGET_CHAIN_ID_HEX = "0x2a5";
+const BOT_RPC_URL = "https://rpc.botchain.ai";
 
 const BOT_CHAIN_CONFIG = {
     chainId: TARGET_CHAIN_ID_HEX,
-    chainName: 'BOT Chain Testnet',
+    chainName: 'BOT Chain',
     nativeCurrency: {
         name: 'BOT',
         symbol: 'BOT',
@@ -241,7 +241,7 @@ async function checkNetwork() {
 }
 
 /**
- * Switch to BOT Chain Testnet (or add network if missing)
+ * Switch to BOT Chain  (or add network if missing)
  */
 async function switchToBotChain() {
     if (!isMetaMaskInstalled()) return;
@@ -259,7 +259,7 @@ async function switchToBotChain() {
                     params: [BOT_CHAIN_CONFIG]
                 });
             } catch (addError) {
-                console.error("Failed to add BOT Chain Testnet:", addError);
+                console.error("Failed to add BOT Chain :", addError);
             }
         } else {
             console.error("Failed to switch network:", switchError);
@@ -371,7 +371,7 @@ async function handleCreateCapsule(e) {
     const submitBtnText = document.getElementById('submitBtnText');
 
     if (!isConnected || !isCorrectNetwork) {
-        alert("Please connect your wallet to BOT Chain Testnet first.");
+        alert("Please connect your wallet to BOT Chain  first.");
         return;
     }
 
@@ -396,8 +396,8 @@ async function handleCreateCapsule(e) {
         console.log("Transaction broadcasted with hash:", tx.hash);
 
         await tx.wait();
-        console.log("Transaction confirmed on BOT Chain Testnet!");
-        alert("Success! Your time capsule has been permanently saved on BOT Chain Testnet.");
+        console.log("Transaction confirmed on BOT Chain !");
+        alert("Success! Your time capsule has been permanently saved on BOT Chain .");
 
         if (messageInput) messageInput.value = "";
         if (charCounter) charCounter.textContent = "0";
@@ -446,7 +446,7 @@ function updateUI() {
         if (networkBanner) networkBanner.classList.add('hidden');
     } else if (isCorrectNetwork) {
         if (networkBadge) networkBadge.className = 'network-badge connected';
-        if (networkName) networkName.textContent = 'BOT Chain Testnet';
+        if (networkName) networkName.textContent = 'BOT Chain ';
         if (networkBanner) networkBanner.classList.add('hidden');
     } else {
         if (networkBadge) networkBadge.className = 'network-badge wrong-network';
