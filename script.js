@@ -1,26 +1,26 @@
 /**
  * AevumArca - Web3 & MetaMask Frontend Script
- * Target Network: BOT Chain  (Chain ID: 968 / 0x3c8)
- * Contract Address: 0x2B35116C58093935f35BE1f7c487C5a02cd835D8
+ * Target Network: BOT Chain Mainnet (Chain ID: 677 / 0x2a5)
+ * Contract Address: 0x9F9BC6bDBd9CB42B3506e570C709B3159e9cb2
  */
 
 // ==========================================
 // 1. Network & Contract Configurations
 // ==========================================
-const CONTRACT_ADDRESS = "0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2"; 
+const CONTRACT_ADDRESS = "0x9F9BC6bDBd9CB42B3506e570C709B3159e9cb2"; 
 const TARGET_CHAIN_ID_DECIMAL = 677;
 const TARGET_CHAIN_ID_HEX = "0x2a5";
-const BOT_RPC_URL = "https://rpc.botchain.ai";
+const BOT_RPC_URL = "https://rpc.bohr.life";
 
 const BOT_CHAIN_CONFIG = {
     chainId: TARGET_CHAIN_ID_HEX,
-    chainName: 'BOT Chain',
+    chainName: 'BOT Chain Mainnet',
     nativeCurrency: {
         name: 'BOT',
         symbol: 'BOT',
         decimals: 18
     },
-    rpcUrls: [BOT_RPC_URL],
+    rpcUrls: [BOT_RPC_URL, 'https://rpc.botchain.ai'],
     blockExplorerUrls: ['https://scan.botchain.ai/']
 };
 
@@ -241,7 +241,7 @@ async function checkNetwork() {
 }
 
 /**
- * Switch to BOT Chain  (or add network if missing)
+ * Switch to BOT Chain Mainnet (or add network if missing)
  */
 async function switchToBotChain() {
     if (!isMetaMaskInstalled()) return;
@@ -259,7 +259,7 @@ async function switchToBotChain() {
                     params: [BOT_CHAIN_CONFIG]
                 });
             } catch (addError) {
-                console.error("Failed to add BOT Chain :", addError);
+                console.error("Failed to add BOT Chain Mainnet :", addError);
             }
         } else {
             console.error("Failed to switch network:", switchError);
@@ -297,7 +297,7 @@ function handleChainChanged(_chainIdHex) {
 // ==========================================
 
 /**
- * Loads stored time capsules from BOT Chain smart contract and renders cards
+ * Loads stored time capsules from BOT Chain Mainnet smart contract and renders cards
  */
 async function loadCapsules() {
     const activeContract = writeContract || readOnlyContract;
@@ -309,7 +309,7 @@ async function loadCapsules() {
 
     try {
         const capsules = await activeContract.getAllCapsules();
-        console.log(`Fetched ${capsules.length} capsules from BOT Chain contract.`);
+        console.log(`Fetched ${capsules.length} capsules from BOT Chain Mainnet contract.`);
 
         if (capsulesCountBadge) {
             capsulesCountBadge.textContent = `${capsules.length} Capsule${capsules.length === 1 ? '' : 's'}`;
@@ -371,7 +371,7 @@ async function handleCreateCapsule(e) {
     const submitBtnText = document.getElementById('submitBtnText');
 
     if (!isConnected || !isCorrectNetwork) {
-        alert("Please connect your wallet to BOT Chain  first.");
+        alert("Please connect your wallet to BOT Chain Mainnet first.");
         return;
     }
 
@@ -396,8 +396,8 @@ async function handleCreateCapsule(e) {
         console.log("Transaction broadcasted with hash:", tx.hash);
 
         await tx.wait();
-        console.log("Transaction confirmed on BOT Chain !");
-        alert("Success! Your time capsule has been permanently saved on BOT Chain .");
+        console.log("Transaction confirmed on BOT Chain Mainnet!");
+        alert("Success! Your time capsule has been permanently saved on BOT Chain Mainnet.");
 
         if (messageInput) messageInput.value = "";
         if (charCounter) charCounter.textContent = "0";
@@ -446,7 +446,7 @@ function updateUI() {
         if (networkBanner) networkBanner.classList.add('hidden');
     } else if (isCorrectNetwork) {
         if (networkBadge) networkBadge.className = 'network-badge connected';
-        if (networkName) networkName.textContent = 'BOT Chain ';
+        if (networkName) networkName.textContent = 'BOT Chain Mainnet';
         if (networkBanner) networkBanner.classList.add('hidden');
     } else {
         if (networkBadge) networkBadge.className = 'network-badge wrong-network';
