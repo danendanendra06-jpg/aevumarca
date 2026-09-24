@@ -10,7 +10,7 @@
 const CONTRACT_ADDRESS = "0x9F9BC6bDBd9CB42B3506e570C709B3159e9cb2"; 
 const TARGET_CHAIN_ID_DECIMAL = 677;
 const TARGET_CHAIN_ID_HEX = "0x2a5";
-const BOT_RPC_URL = "https://rpc.bohr.life";
+const BOT_RPC_URL = "https://rpc.botchain.ai";
 
 const BOT_CHAIN_CONFIG = {
     chainId: TARGET_CHAIN_ID_HEX,
@@ -20,7 +20,7 @@ const BOT_CHAIN_CONFIG = {
         symbol: 'BOT',
         decimals: 18
     },
-    rpcUrls: [BOT_RPC_URL, 'https://rpc.botchain.ai'],
+    rpcUrls: [BOT_RPC_URL],
     blockExplorerUrls: ['https://scan.botchain.ai/']
 };
 
