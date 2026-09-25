@@ -5,7 +5,7 @@ to preserve immutable messages and personal goals on BOT Chain with a timestamp 
 
 ## Project Links
 
-- **Live DApp:** [https://aevumarca.online](https://aevumarca.online)
+- **Live Web:** [https://aevumarca.online](https://aevumarca.online)
 - **GitHub Repository:** [https://github.com/danendanendra06-jpg/aevumarca](https://github.com/danendanendra06-jpg/aevumarca)
 - **X (Twitter):** [https://x.com/AevumArca](https://x.com/AevumArca)
 - **BOT Chain Explorer:** [https://scan.botchain.ai/address/0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2](https://scan.botchain.ai/address/0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2)
