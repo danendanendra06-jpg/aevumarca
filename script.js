@@ -1,13 +1,13 @@
 /**
  * AevumArca - Web3 & MetaMask Frontend Script
  * Target Network: BOT Chain Mainnet (Chain ID: 677 / 0x2a5)
- * Contract Address: 0x9F9BC6bDBd9CB42B3506e570C709B3159e9cb2
+ * Contract Address: 0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2
  */
 
 // ==========================================
 // 1. Network & Contract Configurations
 // ==========================================
-const CONTRACT_ADDRESS = "0x9F9BC6bDBd9CB42B3506e570C709B3159e9cb2"; 
+const CONTRACT_ADDRESS = "0x9F9BcC6bDDBD9CB42B3506e570C709B3159e9cB2"; 
 const TARGET_CHAIN_ID_DECIMAL = 677;
 const TARGET_CHAIN_ID_HEX = "0x2a5";
 const BOT_RPC_URL = "https://rpc.botchain.ai";
